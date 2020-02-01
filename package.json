@@ -1,0 +1,87 @@
+{
+  "name": "react-redux-archetype",
+  "description": "A react-redux project framework",
+  "version": "0.0.0",
+  "author": {
+    "name": "Matt Johnson"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-t-johnson/react-redux-archetype"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/test/setupTests.js"
+    ],
+    "coverageThreshold": {
+      "src/components/": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 80,
+        "statements": 80
+      },
+      "src/middleware/": {
+        "branches": 40,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
+  },
+  "scripts": {
+    "build-client": "rm -rf dist && webpack --mode production",
+    "lint": "eslint -c .eslintrc.json \"./**/*.js\" \"./**/*.jsx\"",
+    "lint-fix": "eslint --fix -c .eslintrc.json \"./**/*.js\" \"./**/*.jsx\"",
+    "test": "jest --coverage",
+    "test-client-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "watch-client": "rm -rf dist && webpack --watch --mode development --hot",
+    "build-css": "node-sass --include-path src src/scss/main.scss dist/app.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "^1.18.3",
+    "prop-types": "^15.7.2",
+    "qs": "^6.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-intl": "^4.1.20",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "jest": "^24.9.0",
+    "node-sass": "^4.13.0",
+    "postcss": "^7.0.18",
+    "postcss-custom-properties": "^9.0.2",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.0",
+    "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  }
+}

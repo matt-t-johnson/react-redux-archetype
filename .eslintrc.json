@@ -1,0 +1,63 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js",".jsx"]
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    },
+    "globals": {
+        "afterEach": "readonly",
+        "Atomics": "readonly",
+        "beforeEach": "readonly",
+        "context": "readonly",
+        "cy": "readonly",
+        "Cypress": "readonly",
+        "describe": "readonly",
+        "expect": "readonly",
+        "it": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "jest": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+          "jsx": true
+        }
+    },
+    "plugins": [
+      "react",
+      "react-hooks",
+      "babel"
+    ],
+    "rules": {
+        "arrow-parens": ["error", "as-needed", {
+            "requireForBlockBody": false
+        }],
+        "babel/semi": 1,
+        "implicit-arrow-linebreak": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "max-len": "off",
+        "object-curly-newline": ["error", {
+          "consistent": true
+        }],
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "import/prefer-default-export": "off",
+        "spaced-comment": "off"
+    }
+}
